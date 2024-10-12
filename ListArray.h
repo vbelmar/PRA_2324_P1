@@ -24,12 +24,22 @@ class ListArray : public List<T> {
 			return arr[pos];
 		}
 
-		friend std::ostream& operator<<(std::ostream &out, const ListArray<T> &list);
-
+		friend std::ostream& operator<<(std::ostream &out, const ListArray<T> &list){
+        		out << "[";
+        		for (int i = 0; i < list.n; ++i) {
+            			out << list.arr[i];
+            			if (i < list.n - 1) {
+                			out << ", ";
+            			}
+        		}
+        		out << "]";
+        		return out;
+    		};
+	
 		void resize(int new_size){
 			T* arr1 = new T[new_size];
 			for (int i = 0; i < n && i < new_size; ++i) {
-            			arr1[i] = arr[i]; // Copy existing elements
+            			arr1[i] = arr[i]; 
         		}
 			delete[] arr;
 			this->arr = arr1;
@@ -38,4 +48,5 @@ class ListArray : public List<T> {
 
 
 };
+
 
