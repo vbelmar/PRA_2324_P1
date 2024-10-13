@@ -6,7 +6,7 @@ class Node {
         T data;
 	Node<T>* next;
 
-	Node(T data, Node<T>* next=nullptr){};
+	Node(T data, Node<T>* next=nullptr) : data(data), next(next) {};
 
 	~Node() = default;
 

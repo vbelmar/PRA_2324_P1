@@ -50,7 +50,10 @@ class ListArray : public List<T> {
 		}
 
 		T remove(int pos) override {
-			int x = arr[pos];
+			if (pos < 0 || pos >= n) {
+     		   throw std::out_of_range("Índice fuera de rango");
+    		}
+			T x = arr[pos];
 			for(int i= pos; i < n-1; i++){
 				arr[i] = arr[pos + 1];
 			}
@@ -66,7 +69,7 @@ class ListArray : public List<T> {
 		}
 
 		int search(T e) override {
-			for(int i = 0; i <= n; i++){
+			for(int i = 0; i < n; i++){
 				if(arr[i] == e){
 					return i;
 				}
