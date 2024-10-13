@@ -28,7 +28,7 @@ class ListArray : public List<T> {
 			}
 
 			if (n >= max){
-        			throw std::overflow_error("List is full");
+				resize(max*2);
 			}		
 
 			for(int i = n; i > pos; i--){
