@@ -13,6 +13,8 @@ class ListArray : public List<T> {
 	public:
 		ListArray(){
 			arr = new T[MINSIZE];
+			n=0;
+			max = MINSIZE;
 		}
 		
 		~ListArray(){
@@ -49,8 +51,8 @@ class ListArray : public List<T> {
 
 		T remove(int pos) override {
 			int x = arr[pos];
-			for(int i= pos; i>pos; i++){
-				arr[i] = arr[pos - 1];
+			for(int i= pos; i < n-1; i++){
+				arr[i] = arr[pos + 1];
 			}
 			n--;
 			return x;
@@ -64,7 +66,7 @@ class ListArray : public List<T> {
 		}
 
 		int search(T e) override {
-			for(int i=0; i<=n; i++){
+			for(int i = 0; i <= n; i++){
 				if(arr[i] == e){
 					return i;
 				}
