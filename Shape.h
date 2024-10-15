@@ -17,13 +17,13 @@ class Shape{
 
 		void set_color(std::string c);
 
-		virtual double area() const;
+		virtual double area() const = 0;
 
-		virtual double perimeter() const;
+		virtual double perimeter() const = 0;
 
-		virtual void translate(double incX, double incY);
+		virtual void translate(double incX, double incY) = 0;
 
-		virtual void print();
+		virtual void print() = 0;
 
 
 };

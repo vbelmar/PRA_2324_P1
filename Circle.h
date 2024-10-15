@@ -7,7 +7,7 @@ class Circle : public Shape {
 		double radius;
 
 	public:
-		Circle() : center(0,0), radius(1) {};
+		Circle() : center(Point2D(0,0)), radius(1.0) {};
 
 		Circle(std::string color, Point2D center, double radius);
 
@@ -28,5 +28,6 @@ class Circle : public Shape {
 		void translate(double incX, double incY) override;
 
 		void print() override;
+		
 
 };
