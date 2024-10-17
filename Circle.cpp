@@ -1,6 +1,7 @@
 #include "Circle.h"
 #include <cmath>
 
+
 Circle::Circle(std::string color, Point2D center, double radius){
 	this->color = color;
 	this->center = center;
