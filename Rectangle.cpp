@@ -1,6 +1,6 @@
 #include "Rectangle.h"
 
-static bool check(Point2D* vs){
+bool Rectangle::check(Point2D* vs){
     double d1 = Point2D::distance(vs[0], vs[1]);
     double d2 = Point2D::distance(vs[1], vs[2]);
     double d3 = Point2D::distance(vs[2], vs[3]);
@@ -10,10 +10,10 @@ static bool check(Point2D* vs){
 
 Rectangle::Rectangle(){
     vs = new Point2D[N_VERTICES];
-    vs[0]=(-1,0.5);
-    vs[1]=(1,0.5);
-    vs[2]=(1,-0.5);
-    vs[3]=(-1,-0.5);
+    vs[0]=Point2D(-1,0.5);
+    vs[1]=Point2D(1,0.5);
+    vs[2]=Point2D(1,-0.5);
+    vs[3]=Point2D(-1,-0.5);
 }
 
 Rectangle::Rectangle(std::string color, Point2D* vertices) {
@@ -74,10 +74,10 @@ Rectangle& Rectangle::operator=(const Rectangle &r){
 
 std::ostream& operator<<(std::ostream &out, const Rectangle &r){
     out << "Rectangle: color = " << r.color 
-	<< ", v1 =" << r.vs[0] 
-	<< ", v2 =" << r.vs[1] 
-	<< ", v3 =" << r.vs[2] 
-	<< ", v4 =" << r.vs[3];
+	<< ", v0 =" << r.vs[0] 
+	<< ", v1 =" << r.vs[1] 
+	<< ", v2 =" << r.vs[2] 
+	<< ", v3 =" << r.vs[3];
     return out;
 }
 
